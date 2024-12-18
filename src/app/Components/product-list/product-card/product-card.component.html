@@ -1,0 +1,5 @@
+<div class="product-card">
+    <h2>{{ product.name }}</h2>
+    <p class="price">${{ product.price.toFixed(2) }}</p>
+    <a [routerLink]="['/product', product.id]" class="view-details">Ver Detalles</a>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <header class="header">
+    <div class="logo"></div> <!-- Logo animado -->
+    <h1>Panadería Yanuencay</h1>
+  </header>
+
+  <section class="products">
+    <h2>Nuestros Productos</h2>
+    <div class="products-grid">
+      <!-- Aquí se listan los productos -->
+      @for (product of products; track product.id) {
+        <app-product-card [product]="product"></app-product-card>
+      }
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="contact-info">
+      <span>Teléfono: +123 456 789</span>
+      <span>Correo: <a href="mailto:yanuencamail.com">yanuencamail.com</a></span>
+    </div>
+  </footer>
+</div>

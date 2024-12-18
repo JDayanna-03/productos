@@ -1,0 +1,140 @@
+/* Estilo general del contenedor */
+.container {
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y elegante */
+  text-align: center;
+  background: url("/bg.png");
+  background-size: cover; /* La imagen cubrirá toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* La imagen se queda fija mientras haces scroll */
+}
+
+/* Encabezado dinámico */
+.header {
+  display: flex;
+  align-items: center; /* Alinea verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 20px;
+  margin-bottom: 40px;
+  background-color: #6d4f3e; /* Café oscuro */
+  padding: 15px 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+  animation: slideIn 2s ease-out; /* Animación de entrada */
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #f5e6c5; /* Color crema para resaltar el texto */
+  margin: 0;
+}
+
+/* Logo dinámico */
+.logo {
+  background: url('/img_logo_.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid #f5e6c5; /* Borde crema */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  animation: spin 4s infinite linear; /* Giro lento */
+}
+
+/* Animación de rebote */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animación de giro */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Productos grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Asegura que las columnas sean iguales */
+  gap: 20px;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+/* Tarjetas de producto con estilo elegante */
+app-product-card {
+  background-color: #e7d3b8; /* Color pastel cálido, suave */
+  border: 3px solid #5c4033; /* Borde en café oscuro */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  height: 300px; /* Altura ajustada */
+  width: 220px; /* Ancho ajustado */
+}
+
+app-product-card:hover {
+  transform: scale(1.05); /* Efecto de agrandamiento */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+app-product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+app-product-card .product-details {
+  padding: 15px;
+  text-align: center;
+  flex-grow: 1; /* Permite que el contenido crezca en la tarjeta para ocupar el espacio disponible */
+}
+
+app-product-card .product-details h2 {
+  font-size: 1.4rem;
+  color: #3b2c21; /* Marrón oscuro */
+}
+
+app-product-card .product-details p {
+  color: #5f4b3a; /* Gris cálido oscuro para mejor legibilidad */
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Footer con estilo elegante */
+.footer {
+  margin-top: 40px;
+  padding: 15px;
+  background-color: #5c4033; /* Café oscuro */
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.footer .contact-info span {
+  display: block;
+  margin: 7px 0;
+}
+
+/* Enlaces del pie de página */
+.footer .contact-info a {
+  color: #f5e6c5;
+  text-decoration: none;
+}
+
+.footer .contact-info a:hover {
+  text-decoration: underline;
+}
