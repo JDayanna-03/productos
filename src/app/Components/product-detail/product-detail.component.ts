@@ -5,11 +5,12 @@ import { Product } from '../../Models/product';
 import { CommonModule } from '@angular/common';
 import { BackButtonComponent } from '../shared/back-button/back-button.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [CommonModule, BackButtonComponent, ProductInfoComponent],
+  imports: [CommonModule, BackButtonComponent, ProductInfoComponent, IonicModule],
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })

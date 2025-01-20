@@ -1,140 +1,138 @@
-/* Estilo general del contenedor */
-.container {
-  font-family: 'Roboto', sans-serif; /* Fuente moderna y elegante */
-  text-align: center;
-  background: url("/bg.png");
-  background-size: cover; /* La imagen cubrirá toda la pantalla */
-  background-position: center; /* Centra la imagen */
-  background-attachment: fixed; /* La imagen se queda fija mientras haces scroll */
+.custom-header {
+  background-color: #cc6d35; /* Color café oscuro, adecuado para la temática */
+  padding: 10px;
 }
 
-/* Encabezado dinámico */
-.header {
+.custom-toolbar {
+  --background: transparent; /* Fondo transparente para un look más limpio */
+  --border-width: 0; /* Eliminar borde */
   display: flex;
-  align-items: center; /* Alinea verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-  gap: 20px;
-  margin-bottom: 40px;
-  background-color: #6d4f3e; /* Café oscuro */
-  padding: 15px 25px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombras suaves */
-  animation: slideIn 2s ease-out; /* Animación de entrada */
+  justify-content: center; /* Centrado de título */
+  align-items: center; /* Alineación vertical al centro */
 }
 
-.header h1 {
-  font-size: 2.5rem;
-  color: #f5e6c5; /* Color crema para resaltar el texto */
-  margin: 0;
+.header-title {
+  font-family: 'Pacifico', sans-serif; /* Tipografía más estilosa y amigable */
+  font-size: 28px;
+  color: #fff; /* Color blanco brillante */
+  letter-spacing: 2px; /* Espaciado de letras para una lectura más elegante */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para resaltar el texto */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  font-weight: bold; /* Peso de fuente para darle mayor énfasis */
 }
 
-/* Logo dinámico */
-.logo {
-  background: url('/img_logo_.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 5px solid #f5e6c5; /* Borde crema */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  animation: spin 4s infinite linear; /* Giro lento */
-}
-
-/* Animación de rebote */
-@keyframes slideIn {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 24px; /* Reducir el tamaño del título en pantallas pequeñas */
   }
 }
 
-/* Animación de giro */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-/* Productos grid */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Asegura que las columnas sean iguales */
-  gap: 20px;
-  justify-items: center;
-  margin-top: 30px;
-}
-
-/* Tarjetas de producto con estilo elegante */
-app-product-card {
-  background-color: #e7d3b8; /* Color pastel cálido, suave */
-  border: 3px solid #5c4033; /* Borde en café oscuro */
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras suaves */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  height: 300px; /* Altura ajustada */
-  width: 220px; /* Ancho ajustado */
-}
-
-app-product-card:hover {
-  transform: scale(1.05); /* Efecto de agrandamiento */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-app-product-card img {
+.swiper {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: auto;
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 123, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 115, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+
+    img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #888;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #333;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 10px;
+
+    .swiper-pagination-bullet {
+      background-color: #333;
+      opacity: 0.7;
+
+      &-active {
+        background-color: #555;
+        opacity: 1;
+      }
+    }
+  }
 }
 
-app-product-card .product-details {
-  padding: 15px;
-  text-align: center;
-  flex-grow: 1; /* Permite que el contenido crezca en la tarjeta para ocupar el espacio disponible */
+.custom-footer {
+  background-color: #000000; /* Color beige suave */
+  padding: 10px 0;
 }
 
-app-product-card .product-details h2 {
-  font-size: 1.4rem;
-  color: #3b2c21; /* Marrón oscuro */
+.custom-toolbar {
+  --background: #722d06; /* Café oscuro o marrón tomate */
+  --border-width: 1px;
+  --border-color: #722d06; /* Variación de un marrón más cálido */
 }
 
-app-product-card .product-details p {
-  color: #5f4b3a; /* Gris cálido oscuro para mejor legibilidad */
-  font-size: 1rem;
-  margin-bottom: 10px;
+.footer-icon {
+  color: #3d2b1f; /* Color marrón oscuro */
+  margin-right: 8px;
 }
 
-/* Footer con estilo elegante */
-.footer {
-  margin-top: 40px;
-  padding: 15px;
-  background-color: #5c4033; /* Café oscuro */
-  border-radius: 15px;
-  text-align: center;
-  color: #fff;
-  font-size: 1.1rem;
+.social-icon {
+  color: #3d2b1f; /* Igual para los íconos sociales */
+  margin-right: 8px;
 }
 
-.footer .contact-info span {
-  display: block;
-  margin: 7px 0;
+.phone-text, .email-text, .social-text {
+  font-size: 14px;
+  color: #402c1e; /* Tono más oscuro de café para mejor contraste */
+  font-family: 'Georgia', serif;
+  line-height: 1.5;
 }
 
-/* Enlaces del pie de página */
-.footer .contact-info a {
-  color: #f5e6c5;
+.phone-text span, .email-text a, .social-text a {
+  font-weight: bold;
+  color: #ffffff; /* Rojo tomate brillante */
   text-decoration: none;
 }
 
-.footer .contact-info a:hover {
+.phone-text span, .email-text a, .social-text a:hover {
   text-decoration: underline;
 }
+
+.phone-email {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .phone-text, .email-text, .social-text {
+    font-size: 12px;
+  }
+}
+
+
+

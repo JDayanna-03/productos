@@ -1,23 +1,66 @@
-<div class="container">
-  <header class="header">
-    <div class="logo"></div> <!-- Logo animado -->
-    <h1>Panadería Yanuncay</h1>
-  </header>
+<ion-header class="custom-header">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="header-title">Panadería Yanuncay</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <section class="products">
-    <h2>Nuestros Productos</h2>
-    <div class="products-grid">
-      <!-- Aquí se listan los productos -->
-      @for (product of products; track product.id) {
-        <app-product-card [product]="product"></app-product-card>
-      }
-    </div>
-  </section>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2 class="ion-text-center">Nuestros Productos</h2>
+      </ion-col>
+    </ion-row>
+    <!-- Contenedor principal de Swiper -->
+    <ion-row>
+      <ion-col>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Aquí se listan los productos -->
+            <div class="swiper-slide" *ngFor="let product of products">
+              <app-product-card [product]="product"></app-product-card>
+            </div>
+          </div>
+          <!-- Paginación -->
+          <div class="swiper-pagination"></div>
+          <!-- Botones de navegación -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
 
-  <footer class="footer">
-    <div class="contact-info">
-      <span>Teléfono: +123 456 789</span>
-      <span>Correo: <a href="mailto:yanuencamail.com">yanuencamail.com</a></span>
-    </div>
-  </footer>
-</div>
+<ion-footer class="custom-footer">
+  <ion-toolbar class="custom-toolbar">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="3" class="ion-text-left phone-email">
+        <ion-text class="phone-text">
+          <ion-icon name="call" class="footer-icon"></ion-icon> 📞
+         <span>+123 456 789</span>
+        </ion-text>
+      </ion-col>
+      <ion-col size="3" class="ion-text-left phone-email">
+        <ion-text class="email-text">
+          <ion-icon name="mail" class="footer-icon"></ion-icon> ✉️
+          <a href="mailto:yanuencamail.com">yanuencamail.com</a>
+        </ion-text>
+      </ion-col>
+      <ion-col size="3" class="ion-text-left phone-email">
+        <ion-text class="social-text">
+          <ion-icon name="logo-instagram" class="social-icon"></ion-icon> 
+          <a href="https://www.instagram.com/at._.vale/" target="_blank">Instagram</a> 📸
+        </ion-text>
+      </ion-col>
+      <ion-col size="3" class="ion-text-right">
+        <ion-text class="social-text">
+          <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+          <a href="https://www.facebook.com/Dayanna Pulla/" target="_blank">Facebook</a> 👍
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+
+

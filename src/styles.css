@@ -1,5 +1,14 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 body {
   
     margin: 0;
     padding: 0;
+  }
+
+  ion-content {
+    --background: #000; /* Fondo negro */
+    color: #fff; /* Color de texto blanco para buena visibilidad */
   }

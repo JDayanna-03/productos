@@ -1,6 +1,16 @@
-<div class="product-card">
-    <h2>{{ product.name }}</h2>
-    <p class="price">${{ product.price.toFixed(2) }}</p>
-    <a [routerLink]="['/product', product.id]" class="view-details">Ver Detalles</a>
-    <button class="add-to-cart" (click)="addToCart()">Agregar al Carrito</button>
-</div>
+<ion-card class="product-card">
+  <ion-card-header>
+    <ion-card-title>{{ product.name }}</ion-card-title>
+    <ion-card-subtitle class="price">${{ product.price.toFixed(2) }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="actions">
+      <ion-button [routerLink]="['/product', product.id]" fill="outline" color="primary">
+        Ver Detalles
+      </ion-button>
+      <ion-button (click)="addToCart()" color="success">
+        Agregar al Carrito
+      </ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>

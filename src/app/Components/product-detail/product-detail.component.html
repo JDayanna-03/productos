@@ -1,8 +1,8 @@
-<div class="container product-detail">
-  <div class="product-info" *ngIf="product">
+<ion-content class="product-detail">
+  <ion-item class="product-info" *ngIf="product">
     <app-product-info [product]="product"></app-product-info>
-  </div>
-  <div class="actions">
+  </ion-item>
+  <ion-item class="actions">
     <app-back-button></app-back-button>
-  </div>
-</div>
+  </ion-item>
+</ion-content>

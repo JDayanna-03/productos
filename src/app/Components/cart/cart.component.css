@@ -1,58 +1,51 @@
 .cart-container {
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 20px;
-  }
-  
-  .cart-items {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
-  }
-  
-  .item-details h3 {
-    margin: 0;
-    color: #2d3748;
-  }
-  
-  .item-quantity {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .item-quantity button {
-    padding: 5px 10px;
-    background-color: #4299e1;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .remove-button {
-    padding: 5px 10px;
-    background-color: #f56565;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .cart-total {
-    margin-top: 20px;
-    text-align: right;
-    padding-top: 20px;
-    border-top: 2px solid #e2e8f0;
-  }
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  z-index: 1000;
+  width: 300px;
+  max-height: 80%;
+  overflow-y: auto;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.remove{
+  background-color: red;
+}
+
+.quantity-button {
+  --background: transparent; /* Fondo transparente */
+  --border-radius: 50%; /* Botón circular */
+  --border-color: #e02012; /* Color del borde (verde suave) */
+  --color: #e02012; /* Color del ícono */
+  --width: 40px; /* Tamaño del botón (ancho) */
+  --height: 40px; /* Tamaño del botón (alto) */
+  --padding: 0; /* Sin relleno interno */
+  --transition: 0.3s ease-in-out; /* Suave transición */
+}
+
+.quantity-button:hover {
+  --background: #e6f7e6; /* Fondo verde claro al pasar el mouse */
+  --border-color: #e02012; /* Color más intenso en el borde */
+  --color: #e02012; /* Ícono más oscuro */
+}
+
+.quantity-button ion-icon {
+  font-size: 18px; /* Tamaño del ícono */
+}
+
+.quantity-button-mas {
+  --background: transparent; /* Fondo transparente */
+  --border-radius: 50%; /* Botón circular */
+  --border-color: #28a745; /* Color del borde (verde suave) */
+  --color: #28a745; /* Color del ícono */
+  --width: 40px; /* Tamaño del botón (ancho) */
+  --height: 40px; /* Tamaño del botón (alto) */
+  --padding: 0; /* Sin relleno interno */
+  --transition: 0.3s ease-in-out; /* Suave transición */
+}
+
+
+.quantity-button-mas ion-icon {
+  font-size: 18px; /* Tamaño del ícono */
+}

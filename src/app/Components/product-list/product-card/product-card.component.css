@@ -1,26 +1,55 @@
 .product-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #ffffff, #f4f4f4);
+  transition: transform 0.3s ease;
+
+  ion-card-title {
+    font-size: 1.2rem;
+    color: #444;
     text-align: center;
   }
-  
+
   .price {
-    color: #2c5282;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1rem;
+    color: #888;
+    text-align: center;
   }
-  
-  .view-details {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #4299e1;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 10px;
+
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+
+      ion-button {
+        font-size: 0.85rem;
+        border-radius: 8px;
+        padding: 5px 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &:first-child {
+          --border-color: #ffbe76;
+          --color: #ffbe76;
+        }
+
+        &:last-child {
+          --background: #a3de83;
+          --background-hover: #90c578;
+        }
+      }
+    }
   }
-  
-  .view-details:hover {
-    background-color: #2b6cb0;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
   }
+}
