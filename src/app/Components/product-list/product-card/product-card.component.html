@@ -2,4 +2,5 @@
     <h2>{{ product.name }}</h2>
     <p class="price">${{ product.price.toFixed(2) }}</p>
     <a [routerLink]="['/product', product.id]" class="view-details">Ver Detalles</a>
+    <button class="add-to-cart" (click)="addToCart()">Agregar al Carrito</button>
 </div>

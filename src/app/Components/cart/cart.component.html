@@ -1,0 +1,26 @@
+`<div class="cart-container">
+    <h2>Carrito de Compras</h2>
+    @if (cartItems.length === 0) {
+      <p>El carrito está vacío</p>
+    } @else {
+      <div class="cart-items">
+        @for (item of cartItems; track item.productId) {
+          <div class="cart-item">
+            <div class="item-details">
+              <h3>{{ item.name }}</h3>
+              <p>Precio: ${{ item.price.toFixed(2) }}</p>
+            </div>
+            <div class="item-quantity">
+              <button (click)="updateQuantity(item.productId, item.quantity - 1)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="updateQuantity(item.productId, item.quantity + 1)">+</button>
+            </div>
+            <button class="remove-button" (click)="removeItem(item.productId)">Eliminar</button>
+          </div>
+        }
+      </div>
+      <div class="cart-total">
+        <h3>Total: ${{ total.toFixed(2) }}</h3>
+      </div>
+    }
+  </div>`

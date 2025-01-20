@@ -17,4 +17,5 @@ export class ProductListComponent {
   constructor(private productService: ProductService) {
     this.products = this.productService.getAllProducts();
   }
+
 }
