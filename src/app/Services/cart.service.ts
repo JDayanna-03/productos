@@ -49,17 +49,17 @@ export class CartService {
   }
 
   clearCart(): void {
-    this.cartItems = [];
-    this.updateCart();
+    this.cartItems = []; // Vacía el carrito
+    this.updateCart();// Actualiza el carrito después de vaciarlo
   }
 
   getTotal(): number {
-    return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);// Calcula el total sumando el precio de cada producto multiplicado por su cantidad
   }
 
   private updateCart(): void {
-    this.cartSubject.next([...this.cartItems]);
-    this.saveCart();
+    this.cartSubject.next([...this.cartItems]);// Emite el nuevo estado del carrito a los suscriptores
+    this.saveCart();// Guarda el carrito en el almacenamiento local
   }
 
   private saveCart(): void {

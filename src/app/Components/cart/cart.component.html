@@ -1,10 +1,7 @@
 @if (isVisible) {
-  <ion-card class="cart-container" >
+  <ion-card class="cart-container">
     <ion-card-header>
       <ion-buttons slot="end">
-        <ion-button (click)="closeCart()" color="medium"> Salir
-          <ion-icon name="close-circle-outline" size="large"></ion-icon>
-        </ion-button>
       </ion-buttons>
       <ion-card-title>Carrito de Compras</ion-card-title>
     </ion-card-header>
@@ -25,7 +22,7 @@
                   -
                 </ion-button>
                 <ion-text>{{ item.quantity }}</ion-text>
-                <ion-button  class="quantity-button-mas" fill="outline" (click)="updateQuantity(item.productId, item.quantity + 1)" color="success">
+                <ion-button class="quantity-button-mas" fill="outline" (click)="updateQuantity(item.productId, item.quantity + 1)" color="success">
                   +
                 </ion-button>
                 <ion-button class="remove-button" fill="clear" color="danger" (click)="removeItem(item.productId)">
@@ -35,7 +32,6 @@
             </ion-item>
           }
         </ion-list>
-        quantity-button-mas
 
         <div class="cart-total">
           <ion-text color="primary">
@@ -47,5 +43,13 @@
         </div>
       }
     </ion-card-content>
+
+    <!-- Botón para minimizar el carrito -->
+    <div class="minimize-button" (click)="minimizeCart()">Minimizar</div>
   </ion-card>
 }
+
+<!-- Botón flotante para maximizar el carrito -->
+<div class="maximize-button hidden" (click)="maximizeCart()">
+  <ion-icon name="cart"></ion-icon>
+</div>
